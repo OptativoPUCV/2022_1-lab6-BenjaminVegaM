@@ -11,3 +11,9 @@ sudoku.c:50:9: note: previous definition of 'num' was here
          ^~~
 Compilation failed
 f30ee2e
+ju., 12 de may. de 2022 11:52:41: 
+ sudoku.c | 26 ++++++++++++--------------
+ 1 file changed, 12 insertions(+), 14 deletions(-)
+ tests:  0|0
+   [ INFO ] obteniendo nodos adyacentes
+03f69e8

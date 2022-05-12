@@ -47,36 +47,34 @@ int is_valid(Node* n){
   int i,j;
   for(i=0 ; i<9 ; i++)
   {
-    int num[8] = {0};
-    //horizontales
+    int num1[8] = {0};
+    int num2[8] = {0};
+
+    //recorrer en diagonal (i,i) y revisar filas y columnas a partir de ese punto
     for(j=0;j<9;j++)
     {
+      //filas desde i,i
       if(n->sudo[i][j] != 0)
       {
-        if(num[n->sudo[i][j]-1] == 1)
+        if(num1[n->sudo[i][j]-1] == 1)
         {
-          return 1;
+          return 0;
         }
         else
         {
-          num[n->sudo[i][j]-1] = 1;
+          num1[n->sudo[i][j]-1] = 1;
         }
       }
-    }
-
-    int num[8] = {0};
-    //verticales
-    for(j=0;j<9;j++)
-    {
+      //columnas desde i,i
       if(n->sudo[j][i] != 0)
       {
-        if(num[n->sudo[j][i]-1] == 1)
+        if(num2[n->sudo[j][i]-1] == 1)
         {
-          return 1;
+          return 0;
         }
         else
         {
-          num[n->sudo[j][i]-1] = 1;
+          num2[n->sudo[j][i]-1] = 1;
         }
       }
     }
