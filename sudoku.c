@@ -114,9 +114,9 @@ List* get_adj_nodes(Node* n)
           {
             Node * adj = copy(n);
             pushBack(list, adj);
-            if(adj->sudo != NULL)
+            if(adj->sudo == NULL)
             {
-              printf("No es null\n");
+              printf("Es null\n");
             }
           }
         }
