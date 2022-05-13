@@ -89,6 +89,8 @@ int is_valid(Node* n){
     //todas las submatrices
     int p,x,y,a,b;
     int num3[10] = {0};
+    b = (3*(4%3));
+    printf("\n\n%i\n\n", b);
 
     for(a = 0 ; a < 9 ; a+=3)
     {
