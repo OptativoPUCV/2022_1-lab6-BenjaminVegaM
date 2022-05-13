@@ -122,32 +122,32 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n)
 {
-  printf("Creando Lista\n");
+  //printf("Creando Lista\n");
   List * list = createList();
   int i,j,k,isValid;
   for(i = 0 ; i < 9 ; i++)
   {
-    printf("for i = %i\n", i);
+    //printf("for i = %i\n", i);
     for(j = 0 ; j < 9 ; j++)
     {
-      printf("for j = %i\n", j);
-      printf("Casilla actual = %i\n", n->sudo[i][j]);
+      //printf("for j = %i\n", j);
+      //printf("Casilla actual = %i\n", n->sudo[i][j]);
       if(n->sudo[i][j] == 0)
       {
-        printf("Casilla vacia, agregando numero\n");
+        //printf("Casilla vacia, agregando numero\n");
         for(k = 1 ; k < 10 ; k++)
         {
           n->sudo[i][j]=k;
-          printf("Verificando numero K = %i en la posicion [%i,%i]\n",n->sudo[i][j],i,j);
+          //printf("Verificando numero K = %i en la posicion [%i,%i]\n",n->sudo[i][j],i,j);
           isValid = is_valid(n);
-          printf("is_valid = %i\n", isValid);
+          //printf("is_valid = %i\n", isValid);
           if(isValid == 1)
           {
             Node * adj = copy(n);
             pushBack(list, adj);
             if(adj->sudo != NULL)
             {
-              printf("adj->sudo no es null\n");
+              //printf("adj->sudo no es null\n");
             }
           }
         }

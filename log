@@ -399,3 +399,9 @@ Fri, 13 May 2022 18:30:14:
  tests:  6|2
 total_score: 45/70
 600c2a5
+Fri, 13 May 2022 18:31:15: 
+ sudoku.c | 16 ++++++++--------
+ 1 file changed, 8 insertions(+), 8 deletions(-)
+ tests:  6|2
+total_score: 45/70
+0548e23
