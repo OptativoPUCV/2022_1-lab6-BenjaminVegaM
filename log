@@ -305,3 +305,9 @@ sudoku.c:109:15: error: invalid operands to binary % (have 'float' and 'int')
       |               ^
 Compilation failed
 e3739a1
+Fri, 13 May 2022 18:06:54: 
+ sudoku.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+ tests:  5|3
+total_score: 35/70
+928a147
