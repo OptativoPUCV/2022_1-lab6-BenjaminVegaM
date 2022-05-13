@@ -69,7 +69,7 @@ int is_valid(Node* n){
       }
       printf("Verificando posicion [%i,%i] = %i\n",j,i,n->sudo[j][i]);
       //columnas desde i,i
-      if(n->sudo[j][i] != 0)
+      if(n->sudo[j][i] != 0 && i != j)
       {
         printf("Es diferente de 0\n");
         if(num2[n->sudo[j][i]] == 1)
