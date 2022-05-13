@@ -89,7 +89,7 @@ int is_valid(Node* n){
         }
         else
         {
-          num3[n->sudo[i][j]- = 1;
+          num3[n->sudo[i][j]] = 1;
         }
     }
   }
