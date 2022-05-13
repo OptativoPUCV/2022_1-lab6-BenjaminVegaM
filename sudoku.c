@@ -89,21 +89,27 @@ int is_valid(Node* n){
     //todas las submatrices
     for(p=0;p<9;p++)
     {
-        x=3*(4/3) + (p/3) ;
-        y=3*(4%3) + (p%3) ;
-        printf("%d ",n->sudo[x][y]);
-        if(p%3 == 2) printf("\n");
-        if(n->sudo[x][y] != 0)
+      for(x = 0 ; x < 10 ; x+=3)
+      {
+        for(y = 0 ; y < 10 ; y+=3)
         {
-          if(num3[n->sudo[x][y]] == 1)
+          x=3*(4/3) + (p/3) ;
+          y=3*(4%3) + (p%3) ;
+          printf("%d ",n->sudo[x][y]);
+          if(p%3 == 2) printf("\n");
+          if(n->sudo[x][y] != 0)
           {
-            return 0;
-          }
-          else
-          {
-            num3[n->sudo[x][y]] = 1;
+            if(num3[n->sudo[x][y]] == 1)
+            {
+              return 0;
+            }
+            else
+            {
+              num3[n->sudo[x][y]] = 1;
+            }
           }
         }
+      }
     }
   }
   return 1;
