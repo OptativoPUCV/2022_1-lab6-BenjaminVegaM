@@ -44,7 +44,7 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int i,j,p,num3[10] = {0};
+  int i,j,p,x,y,num3[10] = {0};
   for(i=0 ; i<9 ; i++)
   {
     int num1[10] = {0};
@@ -60,6 +60,7 @@ int is_valid(Node* n){
         printf("Es diferente de 0\n");
         if(num1[n->sudo[i][j]] == 1)
         {
+          printf("Numero ya encontrado previamente en la fila\n");
           return 0;
         }
         else
@@ -75,6 +76,7 @@ int is_valid(Node* n){
         printf("Es diferente de 0\n");
         if(num2[n->sudo[j][i]] == 1)
         {
+          printf("Numero ya encontrado previamente en la columna\n");
           return 0;
         }
         else
@@ -87,17 +89,17 @@ int is_valid(Node* n){
     //todas las submatrices
     for(p=0;p<9;p++)
     {
-        i=3*(4/3) + (p/3) ;
-        j=3*(4%3) + (p%3) ;
-        printf("%d ",n->sudo[i][j]);
+        x=3*(4/3) + (p/3) ;
+        y=3*(4%3) + (p%3) ;
+        printf("%d ",n->sudo[x][y]);
         if(p%3 == 2) printf("\n");
-        if(num3[n->sudo[i][j]] == 1)
+        if(num3[n->sudo[x][y]] == 1)
         {
           return 0;
         }
         else
         {
-          num3[n->sudo[i][j]] = 1;
+          num3[n->sudo[x][y]] = 1;
         }
     }
   }
