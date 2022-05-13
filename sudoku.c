@@ -109,6 +109,7 @@ List* get_adj_nodes(Node* n)
     for(j=0;j<9;j++)
     {
       printf("for j = %i\n", j);
+      printf("número actual = %i\n", n->sudo[i][j]);
       if(n->sudo[i][j] == 0)
       {
         for(k=1;k<10;k++)
