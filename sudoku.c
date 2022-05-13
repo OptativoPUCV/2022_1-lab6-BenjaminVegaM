@@ -102,7 +102,7 @@ List* get_adj_nodes(Node* n)
 {
   printf("Creando Lista\n");
   List * list = createList();
-  int i,j,k;
+  int i,j,k,isValid;
   for(i=0 ; i<9 ; i++)
   {
     printf("for i = %i\n", i);
@@ -112,10 +112,12 @@ List* get_adj_nodes(Node* n)
       printf("número actual = %i\n", n->sudo[i][j]);
       if(n->sudo[i][j] == 0)
       {
-        for(k=1;k<10;k++)
+        for(k = 1 ; k < 10 ; k++)
         {
           n->sudo[i][j]=k;
-          if(is_valid(n) == 1)
+          isValid = is_valid(n);
+          printf("is_valid = %i\n", isValid);
+          if(isValid == 1)
           {
             Node * adj = copy(n);
             pushBack(list, adj);
