@@ -53,61 +53,58 @@ int is_valid(Node* n){
     //recorrer en diagonal (i,i) y revisar filas y columnas a partir de ese punto
     for(j=0;j<9;j++)
     {
-      printf("Verificando posicion [%i,%i] = %i\n",i,j,n->sudo[i][j]);
+      //printf("Verificando posicion [%i,%i] = %i\n",i,j,n->sudo[i][j]);
       //filas desde i,i
       if(n->sudo[i][j] != 0)
       {
-        printf("Es diferente de 0\n");
+        //printf("Es diferente de 0\n");
         if(num1[n->sudo[i][j]] == 1)
         {
-          printf("Numero ya encontrado previamente en la fila\n");
+          //printf("Numero ya encontrado previamente en la fila\n");
           return 0;
         }
         else
         {
-          printf("No esta en la fila, agregando %i a la fila en la posicion [%i]\n",n->sudo[i][j],n->sudo[i][j]);
+          //printf("No esta en la fila, agregando %i a la fila en la posicion [%i]\n",n->sudo[i][j],n->sudo[i][j]);
           num1[n->sudo[i][j]] = 1;
         }
       }
-      printf("Verificando posicion [%i,%i] = %i\n",j,i,n->sudo[j][i]);
+      //printf("Verificando posicion [%i,%i] = %i\n",j,i,n->sudo[j][i]);
       //columnas desde i,i
       if(n->sudo[j][i] != 0 && i != j)
       {
-        printf("Es diferente de 0\n");
+        //printf("Es diferente de 0\n");
         if(num2[n->sudo[j][i]] == 1)
         {
-          printf("Numero ya encontrado previamente en la columna\n");
+          //printf("Numero ya encontrado previamente en la columna\n");
           return 0;
         }
         else
         {
-          printf("No esta en la columna, agregando %i a la columna en la posicion [%i]\n",n->sudo[j][i],n->sudo[j][i]);
+          //printf("No esta en la columna, agregando %i a la columna en la posicion [%i]\n",n->sudo[j][i],n->sudo[j][i]);
           num2[n->sudo[j][i]] = 1;
         }
       }      
     }
     //todas las submatrices
     int p,x,y,a,b;
-    a = (3*(4/4));
-    b = (3*(4%3));
-    printf("\n\n%i\n%i\n\n", a, b);
-
     for(a = 0 ; a < 9 ; a+=3)
     {
       for(b = 0 ; b < 9 ; b+=3)
       {
+        //printf("Siguiente Sub Matriz\n");
         int num3[10] = {0};
         for(p=0;p<9;p++)
         {
           x = a + (p/3);
           y = b + (p%3);
-          printf("%d ",n->sudo[x][y]);
-          if(p%3 == 2) printf("\n");
+          //printf("%d ",n->sudo[x][y]);
+          //if(p%3 == 2) printf("\n");
           if(n->sudo[x][y] != 0)
           {
             if(num3[n->sudo[x][y]] == 1)
             {
-              printf("\nNumero %i ya encontrado previamente en la sub matriz\n", n->sudo[x][y]);
+              //printf("\nNumero %i ya encontrado previamente en la sub matriz\n", n->sudo[x][y]);
               return 0;
             }
             else
