@@ -45,13 +45,13 @@ void print_node(Node* n){
 
 int is_valid(Node* n){
   int i,j,p,num3[9] = {0};
-  for(i=0 ; i<9 ; i++)
+  for(i=1 ; i<10 ; i++)
   {
     int num1[9] = {0};
     int num2[9] = {0};
 
     //recorrer en diagonal (i,i) y revisar filas y columnas a partir de ese punto
-    for(j=0;j<9;j++)
+    for(j=1;j<10;j++)
     {
       printf("Verificando posicion [%i,%i] = %i\n",i,j,n->sudo[i][j]);
       //filas desde i,i
@@ -64,7 +64,7 @@ int is_valid(Node* n){
         }
         else
         {
-          printf("No está en la fila, agregando %i a la fila\n",n->sudo[i][j]);
+          printf("No esta en la fila, agregando %i a la fila\n",n->sudo[i][j]);
           num1[n->sudo[i][j]] = 1;
         }
       }
@@ -79,7 +79,7 @@ int is_valid(Node* n){
         }
         else
         {
-          printf("No está en la columna, agregando %i a la columna\n",n->sudo[j][i]);
+          printf("No esta en la columna, agregando %i a la columna\n",n->sudo[j][i]);
           num2[n->sudo[j][i]] = 1;
         }
       }      
