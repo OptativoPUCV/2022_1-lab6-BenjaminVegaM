@@ -93,13 +93,16 @@ int is_valid(Node* n){
         y=3*(4%3) + (p%3) ;
         printf("%d ",n->sudo[x][y]);
         if(p%3 == 2) printf("\n");
-        if(num3[n->sudo[x][y]] == 1)
+        if(n->sudo[x][y] != 0)
         {
-          return 0;
-        }
-        else
-        {
-          num3[n->sudo[x][y]] = 1;
+          if(num3[n->sudo[x][y]] == 1)
+          {
+            return 0;
+          }
+          else
+          {
+            num3[n->sudo[x][y]] = 1;
+          }
         }
     }
   }
