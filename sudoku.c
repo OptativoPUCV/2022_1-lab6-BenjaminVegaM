@@ -99,7 +99,7 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n)
 {
-  List* list=createList();
+  List * list = createList();
   int i,j,k;
   for(i=0 ; i<9 ; i++)
   {
@@ -113,7 +113,11 @@ List* get_adj_nodes(Node* n)
           if(is_valid(n) == 1)
           {
             Node * adj = copy(n);
-            pushBack(list,adj);
+            pushBack(list, adj);
+            if(adj->sudo != NULL)
+            {
+              printf("No es null\n");
+            }
           }
         }
         n->sudo[i][j]=0;
