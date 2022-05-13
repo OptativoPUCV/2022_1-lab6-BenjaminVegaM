@@ -79,7 +79,7 @@ int is_valid(Node* n){
         }
         else
         {
-          printf("No esta en la columna, agregando %i a la columna en la posicion [%i]\n",n->sudo[j][i],n->sudo[i][j]);
+          printf("No esta en la columna, agregando %i a la columna en la posicion [%i]\n",n->sudo[j][i],n->sudo[j][i]);
           num2[n->sudo[j][i]] = 1;
         }
       }      
