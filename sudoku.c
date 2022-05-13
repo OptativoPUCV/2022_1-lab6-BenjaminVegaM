@@ -44,7 +44,7 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int i,j;
+  int i,j,p,num3[8]={0};
   for(i=0 ; i<9 ; i++)
   {
     int num1[8] = {0};
@@ -76,7 +76,21 @@ int is_valid(Node* n){
         {
           num2[n->sudo[j][i]-1] = 1;
         }
-      }
+      }      
+    }
+    //todas las submatrices
+    for(p=0;p<9;p++)
+    {
+        i=3*(4/3) + (p/3) ;
+        j=3*(4%3) + (p%3) ;
+        if(num3[n->sudo[i][j]-1] == 1)
+        {
+          return 0;
+        }
+        else
+        {
+          num3[n->sudo[i][j]-1] = 1;
+        }
     }
   }
   return 1;
@@ -93,10 +107,10 @@ List* get_adj_nodes(Node* n)
     {
       if(n->sudo[i][j]==0)
       {
-        for(k=1;0<10;k++)
+        for(k=1;k<10;k++)
         {
           n->sudo[i][j]=k;
-          if(is_valid(n))
+          if(is_valid(n) == 1)
           {
             Node * adj = copy(n);
             pushBack(list,adj);
