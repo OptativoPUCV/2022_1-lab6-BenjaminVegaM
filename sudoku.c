@@ -57,6 +57,7 @@ int is_valid(Node* n){
       //filas desde i,i
       if(n->sudo[i][j] != 0)
       {
+        printf("Es diferente de 0\n");
         if(num1[n->sudo[i][j]] == 1)
         {
           return 0;
@@ -116,6 +117,7 @@ List* get_adj_nodes(Node* n)
         for(k = 1 ; k < 10 ; k++)
         {
           n->sudo[i][j]=k;
+          printf("Verificando nuevo numero K = %i\n",n->sudo[i][j]);
           isValid = is_valid(n);
           printf("is_valid = %i\n", isValid);
           if(isValid == 1)
