@@ -104,7 +104,7 @@ int is_valid(Node* n){
           {
             if(num3[n->sudo[x][y]] == 1)
             {
-              printf("Numero ya encontrado previamente en la sub matriz\n");
+              printf("\nNumero %i ya encontrado previamente en la sub matriz\n", n->sudo[x][y]);
               return 0;
             }
             else
