@@ -323,3 +323,14 @@ Fri, 13 May 2022 18:12:47:
  tests:  0|5
 total_score: 0/70
 45a0efb
+Fri, 13 May 2022 18:14:56: 
+ sudoku.c | 6 ++++--
+ 1 file changed, 4 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function 'is_valid':
+sudoku.c:112:123: error: expected ']' before ')' token
+  112 |               printf("No esta en la columna, agregando %i a la submatriz en la posicion [%i]\n",n->sudo[x][y],n->sudo[x][y);
+      |                                                                                                                           ^
+      |                                                                                                                           ]
+Compilation failed
+2d4a456

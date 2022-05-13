@@ -102,13 +102,15 @@ int is_valid(Node* n){
           if(p%3 == 2) printf("\n");
           if(n->sudo[x][y] != 0)
           {
-            if(num3[n->sudo[x][y]-1] == 1)
+            if(num3[n->sudo[x][y]] == 1)
             {
+              printf("Numero ya encontrado previamente en la sub matriz\n");
               return 0;
             }
             else
             {
-              num3[n->sudo[x][y]-1] = 1;
+              printf("No esta en la columna, agregando %i a la submatriz en la posicion [%i]\n",n->sudo[x][y],n->sudo[x][y);
+              num3[n->sudo[x][y]] = 1;
             }
           }
         }
