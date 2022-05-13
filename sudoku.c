@@ -87,7 +87,8 @@ int is_valid(Node* n){
       }      
     }
     //todas las submatrices
-    int a,b,p,x,y,ax,bx,ay,by;
+    int p,x,y,ax,bx,ay,by;
+    //int a,b;
     int num3[10] = {0};
 
     for(p=0;p<9;p++)
