@@ -71,6 +71,7 @@ int is_valid(Node* n){
       //columnas desde i,i
       if(n->sudo[j][i] != 0)
       {
+        printf("Es diferente de 0\n");
         if(num2[n->sudo[j][i]] == 1)
         {
           return 0;
@@ -116,7 +117,7 @@ List* get_adj_nodes(Node* n)
       printf("Casilla actual = %i\n", n->sudo[i][j]);
       if(n->sudo[i][j] == 0)
       {
-        printf("Casilla vacía, agregando número\n");
+        printf("Casilla vacia, agregando numero\n");
         for(k = 1 ; k < 10 ; k++)
         {
           n->sudo[i][j]=k;
