@@ -87,24 +87,17 @@ int is_valid(Node* n){
       }      
     }
     //todas las submatrices
-    float ax,bx,ay,by;
-    int p,x,y;
-    //int a,b;
+    int p,x,y,a,b;
     int num3[10] = {0};
 
     for(p=0;p<9;p++)
     {
-      /*for(a = 0 ; a < 9 ; a+=3)
+      for(a = 0 ; a < 9 ; a+=3)
       {
         for(b = 0 ; b < 9 ; b+=3)
-        {*/
-          ax = 3*(4/3);
-          bx = (p/3);
-          x = ax + bx ;
-          ay = 3*(4%3);
-          by = (p%3);
-          y = ay + by;
-          printf("p = %i\nax = %f\nbx = %f\nx = %i\nay = %f\nby = %f\ny = %i\n",p,ax,bx,x,ay,by,y);
+        {
+          x = a + (p/3);
+          y = b + (p%3);
           printf("%d ",n->sudo[x][y]);
           if(p%3 == 2) printf("\n");
           if(n->sudo[x][y] != 0)
@@ -118,8 +111,8 @@ int is_valid(Node* n){
               num3[n->sudo[x][y]-1] = 1;
             }
           }
-        //}
-      //}
+        }
+      }
     }
   }
   return 1;
