@@ -53,10 +53,10 @@ int is_valid(Node* n){
     //recorrer en diagonal (i,i) y revisar filas y columnas a partir de ese punto
     for(j=0;j<9;j++)
     {
+      printf("Verificando k=%i en la posicion [%i,%i]\n", n->sudo[i][j],i,j);
       //filas desde i,i
       if(n->sudo[i][j] != 0)
       {
-
         if(num1[n->sudo[i][j]] == 1)
         {
           return 0;
@@ -66,6 +66,7 @@ int is_valid(Node* n){
           num1[n->sudo[i][j]] = 1;
         }
       }
+      printf("Verificando k=%i en la posicion [%i,%i]\n", n->sudo[j][i],j,i);
       //columnas desde i,i
       if(n->sudo[j][i] != 0)
       {
@@ -103,10 +104,10 @@ List* get_adj_nodes(Node* n)
   printf("Creando Lista\n");
   List * list = createList();
   int i,j,k,isValid;
-  for(i=0 ; i<9 ; i++)
+  for(i = 0 ; i < 9 ; i++)
   {
     printf("for i = %i\n", i);
-    for(j=0;j<9;j++)
+    for(j = 0 ; j < 9 ; j++)
     {
       printf("for j = %i\n", j);
       printf("número actual = %i\n", n->sudo[i][j]);
@@ -121,9 +122,9 @@ List* get_adj_nodes(Node* n)
           {
             Node * adj = copy(n);
             pushBack(list, adj);
-            if(adj->sudo == NULL)
+            if(adj->sudo != NULL)
             {
-              printf("Es null\n");
+              printf("adj->sudo no es null\n");
             }
           }
         }
