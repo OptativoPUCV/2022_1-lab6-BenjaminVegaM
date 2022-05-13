@@ -90,11 +90,11 @@ int is_valid(Node* n){
     int p,x,y,a,b;
     int num3[10] = {0};
 
-    for(p=0;p<9;p++)
+    for(a = 0 ; a < 9 ; a+=3)
     {
-      for(a = 0 ; a < 9 ; a+=3)
+      for(b = 0 ; b < 9 ; b+=3)
       {
-        for(b = 0 ; b < 9 ; b+=3)
+        for(p=0;p<9;p++)
         {
           x = a + (p/3);
           y = b + (p%3);
