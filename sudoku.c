@@ -53,7 +53,7 @@ int is_valid(Node* n){
     //recorrer en diagonal (i,i) y revisar filas y columnas a partir de ese punto
     for(j=0;j<9;j++)
     {
-      printf("Verificando k=%i en la posicion [%i,%i]\n", n->sudo[i][j],i,j);
+      printf("Verificando posicion [%i,%i] = %i\n",i,j,n->sudo[i][j]);
       //filas desde i,i
       if(n->sudo[i][j] != 0)
       {
@@ -67,7 +67,7 @@ int is_valid(Node* n){
           num1[n->sudo[i][j]] = 1;
         }
       }
-      printf("Verificando k=%i en la posicion [%i,%i]\n", n->sudo[j][i],j,i);
+      printf("Verificando posicion [%i,%i] = %i\n",j,i,n->sudo[j][i]);
       //columnas desde i,i
       if(n->sudo[j][i] != 0)
       {
@@ -86,6 +86,8 @@ int is_valid(Node* n){
     {
         i=3*(4/3) + (p/3) ;
         j=3*(4%3) + (p%3) ;
+        printf("%d ",n->sudo[i][j]);
+        if(p%3 == 2) printf("\n");
         if(num3[n->sudo[i][j]] == 1)
         {
           return 0;
@@ -111,13 +113,14 @@ List* get_adj_nodes(Node* n)
     for(j = 0 ; j < 9 ; j++)
     {
       printf("for j = %i\n", j);
-      printf("número actual = %i\n", n->sudo[i][j]);
+      printf("Casilla actual = %i\n", n->sudo[i][j]);
       if(n->sudo[i][j] == 0)
       {
+        printf("Casilla vacía, agregando número\n");
         for(k = 1 ; k < 10 ; k++)
         {
           n->sudo[i][j]=k;
-          printf("Verificando nuevo numero K = %i\n",n->sudo[i][j]);
+          printf("Verificando numero K = %i en la posicion [%i,%i]\n",n->sudo[i][j],i,j);
           isValid = is_valid(n);
           printf("is_valid = %i\n", isValid);
           if(isValid == 1)
