@@ -44,11 +44,11 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int i,j,p,num3[8]={0};
+  int i,j,p,num3[9]={0};
   for(i=0 ; i<9 ; i++)
   {
-    int num1[8] = {0};
-    int num2[8] = {0};
+    int num1[9] = {0};
+    int num2[9] = {0};
 
     //recorrer en diagonal (i,i) y revisar filas y columnas a partir de ese punto
     for(j=0;j<9;j++)
@@ -56,25 +56,25 @@ int is_valid(Node* n){
       //filas desde i,i
       if(n->sudo[i][j] != 0)
       {
-        if(num1[n->sudo[i][j]-1] == 1)
+        if(num1[n->sudo[i][j]] == 1)
         {
           return 0;
         }
         else
         {
-          num1[n->sudo[i][j]-1] = 1;
+          num1[n->sudo[i][j]] = 1;
         }
       }
       //columnas desde i,i
       if(n->sudo[j][i] != 0)
       {
-        if(num2[n->sudo[j][i]-1] == 1)
+        if(num2[n->sudo[j][i]] == 1)
         {
           return 0;
         }
         else
         {
-          num2[n->sudo[j][i]-1] = 1;
+          num2[n->sudo[j][i]] = 1;
         }
       }      
     }
@@ -83,13 +83,13 @@ int is_valid(Node* n){
     {
         i=3*(4/3) + (p/3) ;
         j=3*(4%3) + (p%3) ;
-        if(num3[n->sudo[i][j]-1] == 1)
+        if(num3[n->sudo[i][j]] == 1)
         {
           return 0;
         }
         else
         {
-          num3[n->sudo[i][j]-1] = 1;
+          num3[n->sudo[i][j]- = 1;
         }
     }
   }

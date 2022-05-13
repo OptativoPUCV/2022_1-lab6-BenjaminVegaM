@@ -48,3 +48,19 @@ cac5afa
 Fri, 13 May 2022 16:56:47: 
  tests:  0|0
 b7eac95
+Fri, 13 May 2022 16:57:54: 
+ sudoku.c | 18 +++++++++---------
+ 1 file changed, 9 insertions(+), 9 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function 'is_valid':
+sudoku.c:92:31: error: expected expression before '=' token
+   92 |           num3[n->sudo[i][j]- = 1;
+      |                               ^
+sudoku.c:92:35: error: expected ';' before '}' token
+   92 |           num3[n->sudo[i][j]- = 1;
+      |                                   ^
+      |                                   ;
+   93 |         }
+      |         ~                          
+Compilation failed
+04879a7
