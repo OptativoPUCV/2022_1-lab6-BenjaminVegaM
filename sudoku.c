@@ -44,7 +44,7 @@ void print_node(Node* n){
 }
 
 int is_valid(Node* n){
-  int i,j,p,num3[9]={0};
+  int i,j,p,num3[9] = {0};
   for(i=0 ; i<9 ; i++)
   {
     int num1[9] = {0};
@@ -56,6 +56,7 @@ int is_valid(Node* n){
       //filas desde i,i
       if(n->sudo[i][j] != 0)
       {
+        printf("num1[n->sudo[i][j]] == %i", num1[n->sudo[i][j]]);
         if(num1[n->sudo[i][j]] == 1)
         {
           return 0;
