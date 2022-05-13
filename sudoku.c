@@ -100,13 +100,16 @@ int is_valid(Node* n){
 
 List* get_adj_nodes(Node* n)
 {
+  printf("Creando Lista\n");
   List * list = createList();
   int i,j,k;
   for(i=0 ; i<9 ; i++)
   {
+    printf("for i = %i\n", i);
     for(j=0;j<9;j++)
     {
-      if(n->sudo[i][j]==0)
+      printf("for j = %i\n", j);
+      if(n->sudo[i][j] == 0)
       {
         for(k=1;k<10;k++)
         {
