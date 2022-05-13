@@ -272,3 +272,23 @@ sudoku.c:92:9: error: variable 'num3' set but not used [-Werror=unused-but-set-v
 cc1.exe: all warnings being treated as errors
 Compilation failed
 36fe27c
+Fri, 13 May 2022 18:06:12: 
+ sudoku.c | 5 +++--
+ 1 file changed, 3 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function 'is_valid':
+sudoku.c:105:18: error: invalid operands to binary % (have 'float' and 'int')
+  105 |           by = (p%3);
+      |                  ^
+sudoku.c:107:24: error: format '%i' expects argument of type 'int', but argument 2 has type 'double' [-Werror=format=]
+  107 |           printf("p = %i\nax = %f\nbx = %f\nx = %i\nay = %f\nby = %f\ny = %i\n",p,ax,bx,x,ay,by,y);
+      |                       ~^                                                        ~
+      |                        |                                                        |
+      |                        int                                                      double
+      |                       %f
+sudoku.c:109:15: error: invalid operands to binary % (have 'float' and 'int')
+  109 |           if(p%3 == 2) printf("\n");
+      |               ^
+cc1.exe: all warnings being treated as errors
+Compilation failed
+c2755a6
