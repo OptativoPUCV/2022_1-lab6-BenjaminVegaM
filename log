@@ -237,3 +237,38 @@ Fri, 13 May 2022 18:04:35:
  tests:  5|3
 total_score: 35/70
 6b84c16
+Fri, 13 May 2022 18:05:41: 
+ sudoku.c | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function 'is_valid':
+sudoku.c:104:18: error: invalid operands to binary % (have 'float' and 'int')
+  104 |           by = (p%3);
+      |                  ^
+sudoku.c:106:24: error: format '%i' expects argument of type 'int', but argument 2 has type 'double' [-Werror=format=]
+  106 |           printf("p = %i\nax = %f\nbx = %f\nx = %f\nay = %f\nby = %f\ny = %f\n",p,ax,bx,x,ay,by,y);
+      |                       ~^                                                        ~
+      |                        |                                                        |
+      |                        int                                                      double
+      |                       %f
+sudoku.c:107:31: error: array subscript is not an integer
+  107 |           printf("%d ",n->sudo[x][y]);
+      |                               ^
+sudoku.c:108:15: error: invalid operands to binary % (have 'float' and 'int')
+  108 |           if(p%3 == 2) printf("\n");
+      |               ^
+sudoku.c:109:21: error: array subscript is not an integer
+  109 |           if(n->sudo[x][y] != 0)
+      |                     ^
+sudoku.c:111:28: error: array subscript is not an integer
+  111 |             if(num3[n->sudo[x][y]-1] == 1)
+      |                            ^
+sudoku.c:117:27: error: array subscript is not an integer
+  117 |               num3[n->sudo[x][y]-1] = 1;
+      |                           ^
+sudoku.c:92:9: error: variable 'num3' set but not used [-Werror=unused-but-set-variable]
+   92 |     int num3[10] = {0};
+      |         ^~~~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+36fe27c
