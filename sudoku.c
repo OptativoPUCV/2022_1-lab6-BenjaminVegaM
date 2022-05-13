@@ -109,7 +109,6 @@ int is_valid(Node* n){
             }
             else
             {
-              printf("No esta en la columna, agregando %i a la submatriz en la posicion [%i]\n",n->sudo[x][y],n->sudo[x][y]);
               num3[n->sudo[x][y]] = 1;
             }
           }
