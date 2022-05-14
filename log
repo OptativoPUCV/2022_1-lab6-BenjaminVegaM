@@ -411,3 +411,14 @@ Sat, 14 May 2022 17:48:19:
  tests:  6|2
 total_score: 45/70
 1e943da
+Sat, 14 May 2022 17:49:09: 
+ sudoku.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:5:
+sudoku.c: In function 'is_final':
+sudoku.c:165:15: error: the comparison will always evaluate as 'false' for the address of 'is_valid' will never be NULL [-Werror=address]
+  165 |   if(is_valid == 0) return 0;
+      |               ^~
+cc1.exe: all warnings being treated as errors
+Compilation failed
+12e88eb
