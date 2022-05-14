@@ -162,18 +162,25 @@ List* get_adj_nodes(Node* n)
 
 int is_final(Node* n){
   int i,j;
-  if(is_valid(n) == 0) return 0;
-  for(i = 0 ; i < 10 ; i++)
+  List * adjN;
+  Node * aux;
+  /*while(1)
   {
-    for(j = 0 ; j < 10 ; j++)
+    adjN = get_adj_nodes(n);
+    aux = first(adjN);
+    if(is_valid(n) == 0) return 0;*/
+    for(i = 0 ; i < 10 ; i++)
     {
-      printf("[%i,%i] = %i\n", i,j,n->sudo[i][j]);
-      if(n->sudo[i][j] == 0)
+      for(j = 0 ; j < 10 ; j++)
       {
-        return 0;
+        printf("[%i,%i] = %i\n", i,j,n->sudo[i][j]);
+        if(n->sudo[i][j] == 0)
+        {
+          return 0;
+        }
       }
     }
-  }
+  //}
   return 1;
 }
 
