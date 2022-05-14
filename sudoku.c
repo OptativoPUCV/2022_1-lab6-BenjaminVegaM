@@ -162,9 +162,9 @@ List* get_adj_nodes(Node* n)
 
 int is_final(Node* n){
   int i,j;
-  List * adjN;
+  /*List * adjN;
   Node * aux;
-  /*while(1)
+  while(1)
   {
     adjN = get_adj_nodes(n);
     aux = first(adjN);
