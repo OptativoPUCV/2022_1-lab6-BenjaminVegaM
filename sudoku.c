@@ -162,7 +162,7 @@ List* get_adj_nodes(Node* n)
 
 int is_final(Node* n){
   int i,j;
-  if(is_valid == 0) return 0;
+  if(is_valid(n) == 0) return 0;
   for(i = 0 ; i < 10 ; i++)
   {
     for(j = 0 ; j < 10 ; j++)

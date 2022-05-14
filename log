@@ -422,3 +422,9 @@ sudoku.c:165:15: error: the comparison will always evaluate as 'false' for the a
 cc1.exe: all warnings being treated as errors
 Compilation failed
 12e88eb
+Sat, 14 May 2022 17:49:16: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+ tests:  6|2
+total_score: 45/70
+fb91397
