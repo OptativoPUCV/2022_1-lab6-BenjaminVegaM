@@ -84,7 +84,7 @@ int is_valid(Node* n){
           //printf("No esta en la columna, agregando %i a la columna en la posicion [%i]\n",n->sudo[j][i],n->sudo[j][i]);
           num2[n->sudo[j][i]] = 1;
         }
-      }      
+      }    
     }
     //todas las submatrices
     int p,x,y,a,b;
@@ -145,10 +145,10 @@ List* get_adj_nodes(Node* n)
           {
             Node * adj = copy(n);
             pushBack(list, adj);
-            if(adj->sudo != NULL)
+            /*if(adj->sudo != NULL)
             {
-              //printf("adj->sudo no es null\n");
-            }
+              printf("adj->sudo no es null\n");
+            }*/
           }
         }
         n->sudo[i][j]=0;
@@ -161,7 +161,18 @@ List* get_adj_nodes(Node* n)
 
 
 int is_final(Node* n){
-    return 0;
+  int i,j;
+  for(i = 0 ; i < 10 ; i++)
+  {
+    for(j = 0 ; j < 10 ; j++)
+    {
+      if(n->sudo[i][j] == 0)
+      {
+        return 0;
+      }
+    }
+  }
+  return 1;
 }
 
 Node* DFS(Node* initial, int* cont){
