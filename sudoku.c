@@ -180,7 +180,7 @@ int is_final(Node* n){
 Node* DFS(Node* initial, int* cont){
   Stack * s = createStack();
   push(s, initial);
-  while(size(s) != 0)
+  while(top(s) != NULL)
   {
     Node * n = top(s);
     pop(s);
