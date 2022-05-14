@@ -167,9 +167,9 @@ int is_final(Node* n){
   {
     for(j = 0 ; j < 10 ; j++)
     {
+      printf("[%i,%i] = %i\n", i,j,n->sudo[i][j]);
       if(n->sudo[i][j] == 0)
       {
-        printf("[%i,%i] = %i\n", i,j,n->sudo[i][j]);
         return 0;
       }
     }
